@@ -34,7 +34,7 @@ app.post("/scrapping", async (req, res) => {
     }
   };
   const browser = await chromium.launch({
-    headless: false,
+    headless: true,
   });
   try {
     const { documentNumber } = req.body;
@@ -81,7 +81,7 @@ app.post("/scrapping", async (req, res) => {
 app.post("/scrapping-2", async (req, res) => {
   try {
     const browser = await chromium.launch({
-      headless: false,
+      headless: true,
     });
     const page = await browser.newPage();
     await page.goto("https://github.com/dunapanta");
